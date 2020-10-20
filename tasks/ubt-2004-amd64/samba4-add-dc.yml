@@ -28,10 +28,13 @@
   when:
     - smb_dc_result.failed == true
 
+- name: "Update repositories (fix update_cache:yes not working)"
+  raw: apt update
+  
 - name: "Install dependencies"
   apt:
     name: "{{ packages }}"
-    update_cache: yes
+    # update_cache: yes
     state: present
   vars:
     packages:
