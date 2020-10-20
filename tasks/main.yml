@@ -16,6 +16,13 @@
 #    - ansible_architecture == "x86_64"
 
 - name: "Role: additional DC, For OS: Ubuntu 18.04LTS, Arch: amd64"
+  import_tasks: ubt-2004-amd64/samba4-add-dc.yml
+  when:
+    - smb_role == "additional"
+    - ansible_distribution_version == "20.04"
+    - ansible_architecture == "x86_64"
+    
+- name: "Role: additional DC, For OS: Ubuntu 18.04LTS, Arch: amd64"
   import_tasks: ubt-1804-amd64/samba4-add-dc.yml
   when:
     - smb_role == "additional"
