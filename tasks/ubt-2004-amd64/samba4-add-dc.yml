@@ -2,7 +2,7 @@
 # Title: Role Samba4
 #
 # Author: bitfinity-nl
-# File: tasks/ubt-1804-adc.yml
+# File: tasks/ubt-2004-amd64/samba4-add-dc.yml.yml
 #
 # Description:
 #   Add additional domain controller
