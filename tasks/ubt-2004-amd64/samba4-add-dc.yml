@@ -30,14 +30,10 @@
 
 #- name: "Update repositories (fix update_cache:yes not working)"
 #  raw: apt update
-  
-- name: "Install dependencies"
+
+- name: "Install APT packages"
   apt:
-    name: "{{ packages }}"
-    update_cache: yes
-    state: present
-  vars:
-    packages:
+    pkg:
     - acl
     - samba
     - smbclient
@@ -46,6 +42,7 @@
     - winbind
     - libpam-winbind
     - libnss-winbind
+    update_cache: yes
 
 - name: "Disable systemd-resolved"
   systemd:
